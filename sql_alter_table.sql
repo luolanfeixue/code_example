@@ -20,4 +20,10 @@ ALTER TABLE test_change CHANGE b b1 INT FIRST;
 ALTER TABLE test_change CHANGE b b1 int;
 
 --更改表的存储格式
-alter table btcf.recommend_lda_order_result SET FILEFORMAT textfile;
+alter table table_name SET FILEFORMAT textfile;
+
+--变成外部表
+alter table table_name  SET TBLPROPERTIES ('EXTERNAL'='TRUE');
+
+--外部表指定dt
+alter table table_anme add partition (dt='20170826') location '/user/hive/warehouse/db/table_name/dt=2017-08-26';
