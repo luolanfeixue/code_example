@@ -8,11 +8,11 @@
 
 # 打开文件
 file_obj = open(txt_filename, 'r', encoding='utf-8')
-# 读取整个文件内容
+# 读取整个文件内容,将所有内容变成一个str
 all_content = file_obj.read()
 # 逐行读取
 line1 = file_obj.readline()
-# 全部读出
+# 与read一样，全部读出，但是还可以按行处理
 lines = file_obj.readlines()
 for i, line in enumerate(lines):
     print ('{}: {}'.format(i, line))
